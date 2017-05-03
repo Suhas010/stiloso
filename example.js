@@ -1,4 +1,4 @@
-import $package_var from '$package_name';
+import stiloso from 'stiloso';
 
-console.log({$package_var});
+console.log({stiloso});
 

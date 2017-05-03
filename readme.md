@@ -1,6 +1,6 @@
-# $package_name
+# stiloso
 
-> $package_description
+> Create styled and classed react components
 
 background details relevant to understanding what this module does
 
@@ -9,9 +9,9 @@ background details relevant to understanding what this module does
 description of the example
 
 ```js
-const $package_var = require('$package_name');
+const stiloso = require('stiloso');
 
-console.log({$package_var});
+console.log({stiloso});
 ```
 
 This will output
@@ -19,14 +19,14 @@ This will output
 ```
 ```
 
-[![Travis Build Status](https://img.shields.io/travis/$package_author/$package_name/master.svg)](http://travis-ci.org/$package_author/$package_name)
-[![NPM downloads](https://img.shields.io/npm/dt/$package_name.svg)](https://npmjs.org/package/$package_name)
+[![Travis Build Status](https://img.shields.io/travis/parro-it/stiloso/master.svg)](http://travis-ci.org/parro-it/stiloso)
+[![NPM downloads](https://img.shields.io/npm/dt/stiloso.svg)](https://npmjs.org/package/stiloso)
 
 
 ## API
 
 ```js
-const $package_var = (): object
+const stiloso = (): object
 ```
 
 description of the function signature
@@ -36,7 +36,7 @@ description of the function signature
 With [npm](https://npmjs.org/) installed, run
 
 ```
-$ npm install $package_name
+$ npm install stiloso
 ```
 
 ## See Also
