@@ -1,22 +1,19 @@
 import {h} from 'preact';
-import tags from './html-tags';
+import flatMap from 'flatmap';
+import tags from 'html-tags/html-tags.json';
 
 const isClassName = def => typeof def === 'string';
 const isStyle = def => def !== null && typeof def === 'object';
 const isDynamicFn = def => typeof def === 'function';
+const applyProps = props => fn => fn(props);
 
 const stiloso = (tagName, ...definers) => {
 	const staticClassNames = definers.filter(isClassName);
 	const staticStyles = definers.filter(isStyle);
 	const dynamicFns = definers.filter(isDynamicFn);
-	// A console.log({className, style, definers});
 
 	return props => {
-		const dynamicDefs = dynamicFns
-			.map(fn =>
-				fn(props)
-			)
-			.reduce((result, def) => result.concat(def), []);
+		const dynamicDefs = flatMap(dynamicFns, applyProps(props));
 
 		const dynamicClassNames = dynamicDefs.filter(isClassName);
 		const dynamicStyles = dynamicDefs.filter(isStyle);
