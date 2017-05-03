@@ -19,7 +19,27 @@
   "devDependencies": {
     "ava": "^0.19.1",
     "documentation": "^4.0.0-rc.1",
+    "eslint-config-xo-preact": "^1.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "preact-render-to-string": "^3.6.1",
     "rollup": "^0.41.6",
+    "rollup-plugin-jsx": "^1.0.3",
     "xo": "^0.18.1"
+  },
+  "dependencies": {
+    "preact": "^8.1.0"
+  },
+  "xo": {
+    "extends": "xo-preact",
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "react/jsx-filename-extension": 0
+    },
+    "envs": [
+      "browser",
+      "node"
+    ]
   }
 }
