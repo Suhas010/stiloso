@@ -30,12 +30,9 @@ const stiloso = (tagName, ...definers) => {
 			.filter(c => c !== null)
 		);
 
-		delete props.style;
-		delete props.className;
-
 		return h(
 			tagName,
-			Object.assign({className, style}, props),
+			Object.assign({}, props, {className, style}),
 			props.children
 		);
 	};
