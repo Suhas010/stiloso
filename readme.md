@@ -1,5 +1,7 @@
 # stiloso
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/parro-it/stiloso.svg)](https://greenkeeper.io/)
+
 > Create styled and classed react components
 
 background details relevant to understanding what this module does
