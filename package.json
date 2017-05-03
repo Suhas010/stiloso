@@ -11,7 +11,7 @@
     "main.js"
   ],
   "scripts": {
-    "test": "rollup -c && ava && xo --ignore example.js --ignore index.js"
+    "test": "rollup -c && ava && xo --ignore index.js"
   },
   "keywords": [],
   "tonicExampleFilename": "example.js",
