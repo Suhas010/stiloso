@@ -1,7 +1,7 @@
 import test from 'ava';
 import {h} from 'preact';
 import {render} from 'preact-render-to-string';
-import stiloso, {propsToClasses} from '.';
+import {stiloso, html, propsToClasses, partial} from '.';
 
 test('apply class name', t => {
 	const Title = stiloso('header', 'title');
@@ -57,12 +57,12 @@ test('allow children', t => {
 });
 
 test('has shortcuts for all html5 tags', t => {
-	const Awesome = stiloso.main('awesome', {color: 'white'});
+	const Awesome = html.main('awesome', {color: 'white'});
 	t.is('<main class="awesome" style="color: white;"></main>', render(h(Awesome)));
 });
 
 test('partial partially apply arguments', t => {
-	const comp = stiloso.partial('div', 'claxx', {color: 'red'});
+	const comp = partial('div', 'claxx', {color: 'red'});
 	const Compito = comp('clazz', {background: 'green'});
 	const expected = '<div class="claxx clazz" style="color: red; background: green;"></div>';
 	const actual = render(h(Compito));

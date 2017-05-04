@@ -11,30 +11,20 @@ background details relevant to understanding what this module does
 description of the example
 
 ```js
-const stiloso = require('stiloso');
+const {html, propsToClasses} = require('stiloso');
+const {h} = require('preact');
+const {render} = require('preact-render-to-string');
 
-// Create a ToolbarHeader component rendered as
-// <header className="toolbar toolbar-header"/>
-export const ToolbarHeader = stiloso.header('toolbar', 'toolbar-header');
+const ToolbarHeader = html.header('toolbar', 'toolbar-header');
+const Window = html.main('window');
+const Warning = html.span({color: 'red'});
+const Title = html.h1('title', {fontSize: 40});
+const Pane = html.section('pane', propsToClasses({small: 'pane-sm'}));
 
-// Create a Window component rendered as <main className="window"/>
-export const Window = stiloso.main('window');
-
-// Create a Warning component rendered as <span style="color: red"/>
-export const Warning = stiloso.span({color: 'red'});
-
-// Create a Title component rendered as
-// <span className="title" style="font-size: 40px" />
-export const Title = stiloso.h1('title', {fontSize: 40});
-
-// Create a Pane component rendered as
-// <section className="pane"/>
-// `section` element will contains additional class `pane-sm`
-// if `small` boolean property is provided to the component.
-// <Pane small> is rendered as <section className="pane pane-sm"/>
-export const Pane = stiloso.section('pane', props =>
-	props.small ? 'pane-sm' : null
-);
+console.log(render(h(Window, {}, [
+	h(ToolbarHeader, {}, [h(Title, {}, ['Example Window'])]),
+	h(Pane, {active: true}, [h(Warning, {}, ['this is an example'])])
+])));
 ```
 
 This will output

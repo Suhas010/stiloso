@@ -7,7 +7,7 @@ const isStyle = def => def !== null && typeof def === 'object';
 const isDynamicFn = def => typeof def === 'function';
 const applyProps = props => fn => fn(props);
 
-const stiloso = (tagName, ...definers) => {
+export const stiloso = (tagName, ...definers) => {
 	const staticClassNames = definers.filter(isClassName);
 	const staticStyles = definers.filter(isStyle);
 	const dynamicFns = definers.filter(isDynamicFn);
@@ -38,12 +38,22 @@ const stiloso = (tagName, ...definers) => {
 	};
 };
 
-stiloso.partial = (tagName, ...definers) => (...otherDefiners) =>
+export const partial = (tagName, ...definers) => (...otherDefiners) =>
 	stiloso(tagName, ...definers.concat(otherDefiners))
 ;
 
+export const html = {};
 tags.forEach(tag => {
-	stiloso[tag] = stiloso.partial(tag);
+	html[tag] = partial(tag);
 });
 
-export default stiloso;
+export const propsToClasses = opts => props => {
+	const defs = [];
+	for (const prop of Object.keys(opts)) {
+		if (props[prop]) {
+			defs.push(opts[prop]);
+			delete props[prop];
+		}
+	}
+	return defs;
+};

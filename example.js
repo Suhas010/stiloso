@@ -1,14 +1,12 @@
-const stiloso = require('stiloso');
+const {html, propsToClasses} = require('stiloso');
 const {h} = require('preact');
 const {render} = require('preact-render-to-string');
 
-const ToolbarHeader = stiloso.header('toolbar', 'toolbar-header');
-const Window = stiloso.main('window');
-const Warning = stiloso.span({color: 'red'});
-const Title = stiloso.h1('title', {fontSize: 40});
-const Pane = stiloso.section('pane', props =>
-	props.small ? 'pane-sm' : null
-);
+const ToolbarHeader = html.header('toolbar', 'toolbar-header');
+const Window = html.main('window');
+const Warning = html.span({color: 'red'});
+const Title = html.h1('title', {fontSize: 40});
+const Pane = html.section('pane', propsToClasses({small: 'pane-sm'}));
 
 render(h(Window, {}, [
 	h(ToolbarHeader, {}, [h(Title, {}, ['Example Window'])]),
