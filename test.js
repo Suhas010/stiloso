@@ -1,7 +1,7 @@
 import test from 'ava';
 import {h} from 'preact';
 import {render} from 'preact-render-to-string';
-import stiloso from '.';
+import stiloso, {propsToClasses} from '.';
 
 test('apply class name', t => {
 	const Title = stiloso('header', 'title');
@@ -21,6 +21,17 @@ test('dynamic styles', t => {
 	});
 	t.is('<header class="jumbo red"></header>', render(h(Title, {active: true})));
 	t.is('<header class="jumbo green"></header>', render(h(Title, {active: false})));
+});
+
+test('propsToClasses', t => {
+	const Title = stiloso('header', 'jumbo', propsToClasses({
+		warning: 'red',
+		info: 'blue'
+	}));
+
+	t.is('<header class="jumbo red"></header>', render(h(Title, {warning: true})));
+	t.is('<header class="jumbo blue"></header>', render(h(Title, {info: true})));
+	t.is('<header class="jumbo"></header>', render(h(Title, {})));
 });
 
 test('ignore empty styles', t => {
