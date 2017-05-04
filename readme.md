@@ -2,13 +2,20 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/parro-it/stiloso.svg)](https://greenkeeper.io/)
 
-> Create styled and classed react components
+> Simplify creation of modules that wraps CSS frameworks with react components.
 
-background details relevant to understanding what this module does
+preact modules that wraps CSS frameworks often are just a collection of  simple html elements components with a set of classes from the CSS framework applied.
+
+This module simplify the creation of such react components.
+It export a function that return a preact component that render to an html5 tag with specified classes and styles applied.
+
 
 ## Usage
 
-description of the example
+This example create some components that wraps [photonkit](photonkit.com)
+widgets.
+
+It uses the html5 helpers function exported in `html`.
 
 ```js
 const {html, propsToClasses} = require('stiloso');
@@ -29,7 +36,19 @@ console.log(render(h(Window, {}, [
 
 This will output
 
-```
+```html
+<main class="window">
+	<header class="toolbar toolbar-header">
+		<h1 class="title" style="font-size: 40px;">
+			Example Window
+		</h1>
+	</header>
+	<section active class="pane">
+		<span style="color: red;">
+			this is an example
+		</span>
+	</section>
+</main>
 ```
 
 [![Travis Build Status](https://img.shields.io/travis/parro-it/stiloso/master.svg)](http://travis-ci.org/parro-it/stiloso)
