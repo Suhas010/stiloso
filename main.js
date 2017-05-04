@@ -49,11 +49,17 @@ tags.forEach(tag => {
 
 export const propsToClasses = opts => props => {
 	const defs = [];
+	let someClassApplied = false;
 	for (const prop of Object.keys(opts)) {
 		if (props[prop]) {
 			defs.push(opts[prop]);
 			delete props[prop];
+			someClassApplied = true;
 		}
 	}
+	if (!someClassApplied && opts._) {
+		defs.push(opts._);
+	}
+
 	return defs;
 };
