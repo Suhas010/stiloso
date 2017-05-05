@@ -13,8 +13,8 @@ const applyProps = props => fn => fn(props);
  * Component children will become children of the HTML element, and props will be
  * forwarded to it as well. Class names and inline CSS styles will be coinstructed as specified below.
  *
- * @param  {String} tagName Tagname of the html element to use for the component
- * @param  {Object|Function|String}definers Arguments that defines classes and styles to apply
+ * @param  {String} tagName - Tagname of the html element to use for the component
+ * @param  {Object|Function|String}definers - Arguments that defines classes and styles to apply
  * to the html element.
  * When elements are of String type, the value will be used as a class of the HTML element;
  * When elements are simple object, they will be used as style property of the element, using
@@ -55,15 +55,36 @@ export const stiloso = (tagName, ...definers) => {
 	};
 };
 
+/**
+ * Partially apply a tagName and a set of definer arguments to stiloso function.
+ * Return a function that accept other definers, concatenate them to these and
+ * pass all them to stiloso function.
+ * @param  {String} tagName - Tagname of the html element to use for the component, required.
+ * @param  {...[type]} definers - Set of definers to partially apply to `stiloso` function.
+ * @return {Function} a stiloso function that will use given tagName and a concatenation of actual and future definers.
+ */
 export const partial = (tagName, ...definers) => (...otherDefiners) =>
 	stiloso(tagName, ...definers.concat(otherDefiners))
 ;
 
+/**
+ * An object with methods to simplify creation of HTML5 stiloso Component.
+ * The object contain a method for each HTML5 element type.
+ * @type {Object}
+ */
 export const html = {};
 tags.forEach(tag => {
 	html[tag] = partial(tag);
 });
 
+/**
+ * Given an object with prop names as keys and corresponding class names
+ * as values, return a definer that apply classes to the HTML element only when
+ * boolean props are present in the component.
+ * @param  {Object} options - An object with prop names as keys and corresponding class names
+ * as values.
+ * @return {Function} a definer to use as stiloso argument.
+ */
 export const propsToClasses = opts => props => {
 	const defs = [];
 	let someClassApplied = false;

@@ -77,6 +77,38 @@ forwarded to it as well. Class names and inline CSS styles will be coinstructed 
 
 Returns **Component** A stateless preact component.
 
+### partial
+
+Partially apply a tagName and a set of definer arguments to stiloso function.
+Return a function that accept other definers, concatenate them to these and
+pass all them to stiloso function.
+
+**Parameters**
+
+-   `tagName` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Tagname of the html element to use for the component, required.
+-   `definers` **...\[type]** Set of definers to partially apply to `stiloso` function.
+
+Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** a stiloso function that will use given tagName and a concatenation of actual and future definers.
+
+### html
+
+An object with methods to simplify creation of HTML5 stiloso Component.
+The object contain a method for each HTML5 element type.
+
+### propsToClasses
+
+Given an object with prop names as keys and corresponding class names
+as values, return a definer that apply classes to the HTML element only when
+boolean props are present in the component.
+
+**Parameters**
+
+-   `opts`  
+-   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** An object with prop names as keys and corresponding class names
+    as values.
+
+Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** a definer to use as stiloso argument.
+
 ## Install
 
 With [npm](https://npmjs.org/) installed, run
