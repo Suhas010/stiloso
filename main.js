@@ -18,7 +18,9 @@ const applyProps = props => fn => fn(props);
  * Array elements could have following types:
  *
  * \* String:  argument value will be used as a class of the HTML element
+ *
  * \* Object:  argument will be used as style property of the element, using normal react syntax
+ *
  * \* Function:  provided function will be called with component props as argument. The function should return a string or an array of string that will be used as classes of the HTML element.
  *
  * @return {Component} A stateless preact component.
