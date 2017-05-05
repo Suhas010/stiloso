@@ -68,7 +68,12 @@ forwarded to it as well. Class names and inline CSS styles will be coinstructed 
 
 -   `tagName` **[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Tagname of the html element to use for the component
 -   `definers` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function) \| [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** Arguments that defines classes and styles to apply to the html element.
-    Array elements could have following types:\* String:  argument value will be used as a class of the HTML element\* Object:  argument will be used as style property of the element, using normal react syntax\* Function:  provided function will be called with component props as argument. The function should return a string or an array of string that will be used as classes of the HTML element.
+
+Array elements could have following types:
+
+* String:  argument value will be used as a class of the HTML element
+* Object:  argument will be used as style property of the element, using normal react syntax
+* Function:  provided function will be called with component props as argument. The function should return a string or an array of string that will be used as classes of the HTML element.
 
 Returns **Component** A stateless preact component.
 
