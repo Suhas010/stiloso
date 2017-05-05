@@ -14,14 +14,13 @@ const applyProps = props => fn => fn(props);
  * forwarded to it as well. Class names and inline CSS styles will be coinstructed as specified below.
  *
  * @param  {String} tagName Tagname of the html element to use for the component
- * @param  {Object|Function|String}definers Arguments that defines classes and styles to apply to the html element.
- * Array elements could have following types:
- *
- * \* String:  argument value will be used as a class of the HTML element
- *
- * \* Object:  argument will be used as style property of the element, using normal react syntax
- *
- * \* Function:  provided function will be called with component props as argument. The function should return a string or an array of string that will be used as classes of the HTML element.
+ * @param  {Object|Function|String}definers Arguments that defines classes and styles to apply
+ * to the html element.
+ * When elements are of String type, the value will be used as a class of the HTML element;
+ * When elements are simple object, they will be used as style property of the element, using
+ * normal react syntax for styles;
+ * When they are Functions,  they will be called with component props as argument.
+ * The function should return a string or an array of string that will be used as classes of the HTML element.
  *
  * @return {Component} A stateless preact component.
  */
