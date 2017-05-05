@@ -103,7 +103,7 @@ boolean props are present in the component.
 
 **Parameters**
 
--   `opts`  
+-   `opts`
 -   `options` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** An object with prop names as keys and corresponding class names
     as values.
 
@@ -118,7 +118,8 @@ With [npm](https://npmjs.org/) installed, run
 ## See Also
 
 -   [`noffle/common-readme`](https://github.com/noffle/common-readme)
+-   [`stiloso-photonkit`](https://github.com/parro-it/stiloso-photonkit) - A preact module that wraps photonkit CSS framework, built with `stiloso`
 
-## License
+## MIT License
 
-MIT
+Copyright (c) 2017 Andrea Parodi
