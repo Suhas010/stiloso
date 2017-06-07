@@ -1,7 +1,8 @@
-import {h} from 'preact';
+import preact from 'preact';
 import flatMap from 'flatmap';
 import tags from 'html-tags/html-tags.json';
 
+const {h} = preact;
 const isClassName = def => typeof def === 'string';
 const isStyle = def => def !== null && typeof def === 'object';
 const isDynamicFn = def => typeof def === 'function';
