@@ -30,7 +30,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "xo": "^0.18.1",
     "flatmap": "^0.0.3",
-    "html-tags": "^1.1.1"
+    "html-tags": "^1.2.0"
   },
   "xo": {
     "extends": "xo-preact",
