@@ -18,7 +18,7 @@
   "module": "main.js",
   "devDependencies": {
     "ava": "^0.19.1",
-    "documentation": "^4.0.0-rc.1",
+    "documentation": "^4.0.0",
     "eslint-config-xo-preact": "^1.0.0",
     "eslint-plugin-react": "^7.0.0",
     "preact": "^8.1.0",
