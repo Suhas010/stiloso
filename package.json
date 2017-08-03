@@ -24,7 +24,7 @@
     "preact": "^8.1.0",
     "preact-render-to-string": "^3.6.1",
     "rollup": "^0.41.6",
-    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-commonjs": "^8.1.0",
     "rollup-plugin-json": "^2.1.1",
     "rollup-plugin-jsx": "^1.0.3",
     "rollup-plugin-node-resolve": "^3.0.0",
